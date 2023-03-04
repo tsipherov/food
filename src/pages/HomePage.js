@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { getAllCategories } from "../api";
+import { Preloader } from "../components/Preloader";
+import { FoodContext } from "../context";
+import CategoryList from "../components/CaregoryList";
 
 const HomePage = () => {
-  const [data, setData] = useState([]);
+  const { categories, setAllCategories } = useContext(FoodContext);
   useEffect(() => {
-    getAllCategories().then((res) => setData(res.categories));
+    getAllCategories().then((res) => setAllCategories(res.categories));
+    // eslint-disable-next-line
   }, []);
-  console.log("data >>> ", data);
-  return <div>HomePage</div>;
+  return <>{categories ? <CategoryList /> : <Preloader />}</>;
 };
 
 export default HomePage;

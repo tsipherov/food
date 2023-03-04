@@ -2,15 +2,21 @@ import { createContext, useReducer } from "react";
 import { reducer } from "./reducer";
 
 const initState = {
-  food: [],
+  categories: [],
+  meals: [],
 };
 
 export const FoodContext = createContext();
 
 export const FoodProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initState);
-  state.method = (data) => {
-    dispatch({ type: "", payload: data });
+
+  state.setAllCategories = (data) => {
+    dispatch({ type: "SET_ALL_CATEGORIES", payload: data });
+  };
+
+  state.setMeals = (data) => {
+    dispatch({ type: "SET_MEALS", payload: data });
   };
 
   return <FoodContext.Provider value={state}>{children}</FoodContext.Provider>;

@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactsPage from "./pages/ContactsPage";
 import { FoodProvider } from "./context";
+import Category from "./pages/Category";
+import MeelPage from "./pages/MeelPage";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contacts" element={<ContactsPage />} />
+            <Route path="/category/:slug" element={<Category />} />
+            <Route path="/meal/:title" element={<MeelPage />} />
           </Routes>
         </main>
       </FoodProvider>
