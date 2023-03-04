@@ -4,6 +4,7 @@ import { reducer } from "./reducer";
 const initState = {
   categories: [],
   meals: [],
+  recipe: {},
 };
 
 export const FoodContext = createContext();
@@ -17,6 +18,10 @@ export const FoodProvider = ({ children }) => {
 
   state.setMeals = (data) => {
     dispatch({ type: "SET_MEALS", payload: data });
+  };
+
+  state.setRecipe = (data) => {
+    dispatch({ type: "SET_RECIPE", payload: data });
   };
 
   return <FoodContext.Provider value={state}>{children}</FoodContext.Provider>;
