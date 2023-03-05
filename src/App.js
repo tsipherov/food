@@ -8,6 +8,7 @@ import ContactsPage from "./pages/ContactsPage";
 import { FoodProvider } from "./context";
 import Category from "./pages/Category";
 import MealPage from "./pages/MealPage";
+import SearchResult from "./pages/SearchResult";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/contacts" element={<ContactsPage />} />
             <Route path="/category/:slug" element={<Category />} />
             <Route path="/meal/:id" element={<MealPage />} />
+            <Route path="/browse/*" element={<SearchResult />} />
           </Routes>
         </main>
       </FoodProvider>

@@ -60,13 +60,13 @@ const MealPage = () => {
                 src={`https://www.youtube.com/embed/${recipe.strYoutube.slice(
                   -11
                 )}`}
-                allowfullscreen
+                allowFullScreen
               />
             </div>
           ) : null}
         </div>
       )}
-      <button className="btn" onClick={goBack}>
+      <button className="btn btn-back" onClick={goBack}>
         Go Back
       </button>
     </>

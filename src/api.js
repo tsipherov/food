@@ -15,4 +15,10 @@ const getFilteredCategory = async (catName) => {
   return await response.json();
 };
 
-export { getMealById, getAllCategories, getFilteredCategory };
+const searchMealByName = async (searchMeal) => {
+  console.log("searchMeal >>> ", searchMeal);
+  const response = await fetch(`${API_URL}search.php?s=${searchMeal}`);
+  return await response.json();
+};
+
+export { getMealById, getAllCategories, getFilteredCategory, searchMealByName };
