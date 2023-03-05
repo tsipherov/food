@@ -45,3 +45,7 @@ iframe {
   right: 20px;
   z-index: 100;
 }
+
+.textCenter {
+  text-align: center;
+}

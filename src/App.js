@@ -9,6 +9,7 @@ import { FoodProvider } from "./context";
 import Category from "./pages/Category";
 import MealPage from "./pages/MealPage";
 import SearchResult from "./pages/SearchResult";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="/category/:slug" element={<Category />} />
             <Route path="/meal/:id" element={<MealPage />} />
             <Route path="/browse/*" element={<SearchResult />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </FoodProvider>
