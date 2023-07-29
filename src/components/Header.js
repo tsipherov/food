@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.svg";
 
 function Header() {
   return (
-    <nav className="green darken-1">
+    <nav className="light-blue lighten-1">
       <div className="nav-wrapper">
-        <Link to="/" className="brand-logo">
+        {/* <img src={logo} alt="the meal" className="siteLogo" /> */}
+        <Link to="/" className="brandLogo">
           The meal
         </Link>
         <ul id="nav-mobile" className="right hide-on-med-and-down">

@@ -7,7 +7,7 @@ const GoBackButton = () => {
     navigate(-1);
   };
   return (
-    <button className="btn btn-back" onClick={goBack}>
+    <button className="btn btn-back light-blue lighten-1" onClick={goBack}>
       Go Back
     </button>
   );

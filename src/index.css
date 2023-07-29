@@ -1,38 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 body {
   margin: 0;
+
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 nav {
-  padding: 0 1rem;
+  padding: 0 4rem;
 }
+
+nav .brandLogo {
+  font-size: 3rem;
+  font-family: 'Dancing Script', cursive;
+
+}
+
 .content {
   min-height: calc(100vh - 70px - 64px);
   padding: 1.5rem 0;
 }
+
 .list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1rem;
 }
+
 .card {
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
 }
+
+.card .card-title {
+  font-size: 2rem;
+  font-family: 'Dancing Script', cursive;
+}
+
 .card-content {
   flex-grow: 1;
 }
+
 img,
 iframe {
-  max-width: 100%;
+  /* max-width: 100%; */
 }
+
 iframe {
-  width: 600px;
-  height: 350px;
+  /* width: 600px;
+  height: 350px; */
+  width: 80%;
+  aspect-ratio: 16/9;
+  /* object-fit: cover; */
+  margin: auto;
 }
+
 .searchBtn {
   position: absolute;
   top: 0;
@@ -41,11 +68,48 @@ iframe {
 
 .btn-back {
   position: fixed;
-  bottom: 60px;
-  right: 20px;
+  bottom: 80px;
+  right: 30px;
   z-index: 100;
 }
 
 .textCenter {
   text-align: center;
+}
+
+.siteLogo {
+  width: 50px;
+  color: white;
+  fill: white;
+}
+
+.recipeHeader {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  ;
+}
+
+.ingredientContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem
+}
+
+.ingredientContainer table {
+  width: 40%;
+}
+
+.ingredientContainer table td {
+  padding: 8px 5px;
+}
+
+.imgContainer {
+  width: 60%;
+}
+
+.imgContainer img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }

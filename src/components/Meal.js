@@ -11,7 +11,7 @@ const Meal = ({ idMeal, strMeal, strMealThumb }) => {
         <span className="card-title">{strMeal}</span>
       </div>
       <div className="card-action">
-        <Link to={`/meal/${idMeal}`} className="btn">
+        <Link to={`/meal/${idMeal}`} className="btn light-blue lighten-1">
           Watch recipe
         </Link>
       </div>

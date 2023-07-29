@@ -24,33 +24,38 @@ const MealPage = () => {
         <Preloader />
       ) : (
         <div className="recipe">
-          <img src={recipe.strMealThumb} alt={recipe.strMeal} />
-          <h1>{recipe.strMeal}</h1>
+          <h1 className="recipeHeader">{recipe.strMeal}</h1>
+          <div className="ingredientContainer">
+            <div className="imgContainer">
+              <img src={recipe.strMealThumb} alt={recipe.strMeal} />
+            </div>
+
+            <table className="centered">
+              <thead>
+                <tr>
+                  <th>Ingredient</th>
+                  <th>Measure</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.keys(recipe).map((key) => {
+                  if (key.includes("Ingredient") && recipe[key]) {
+                    return (
+                      <tr key={key}>
+                        <td>{recipe[key]}</td>
+                        <td>{recipe[`strMeasure${key.slice(13)}`]}</td>
+                      </tr>
+                    );
+                  }
+                  return null;
+                })}
+              </tbody>
+            </table>
+          </div>
+
           <h6>Category: {recipe.strCategory}</h6>
           {recipe.strArea ? <h6>Area: {recipe.strArea}</h6> : null}
           <p>{recipe.strInstructions}</p>
-
-          <table className="centered">
-            <thead>
-              <tr>
-                <th>Ingredient</th>
-                <th>Measure</th>
-              </tr>
-            </thead>
-            <tbody>
-              {Object.keys(recipe).map((key) => {
-                if (key.includes("Ingredient") && recipe[key]) {
-                  return (
-                    <tr key={key}>
-                      <td>{recipe[key]}</td>
-                      <td>{recipe[`strMeasure${key.slice(13)}`]}</td>
-                    </tr>
-                  );
-                }
-                return null;
-              })}
-            </tbody>
-          </table>
 
           {recipe.strYoutube ? (
             <div className="row">
@@ -66,7 +71,7 @@ const MealPage = () => {
           ) : null}
         </div>
       )}
-      <button className="btn btn-back" onClick={goBack}>
+      <button className="btn btn-back light-blue lighten-1" onClick={goBack}>
         Go Back
       </button>
     </>

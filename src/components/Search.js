@@ -48,7 +48,10 @@ const Search = () => {
           onChange={(e) => setValue(e.target.value)}
           value={value}
         />
-        <button className="btn searchBtn" onClick={handleSubmit}>
+        <button
+          className="btn searchBtn light-blue lighten-1"
+          onClick={handleSubmit}
+        >
           Search
         </button>
       </div>
